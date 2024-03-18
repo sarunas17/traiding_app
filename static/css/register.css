@@ -1,0 +1,20 @@
+.register-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url("public/1620px-euro_coins_and_banknotes_(cropped)1.jpg");
+}
+.register-text {
+  background-color: #ffffff;
+}
+.register-text1 {
+  color: #f50000;
+}
+.register-navlink {
+  text-decoration: none;
+}

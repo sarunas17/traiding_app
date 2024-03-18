@@ -1,0 +1,65 @@
+.nav12-container {
+  display: flex;
+  position: relative;
+}
+.nav12-navlink {
+  display: contents;
+}
+.nav12-nav12 {
+  color: #fd2929;
+  align-self: flex-start;
+  box-shadow: 5px 5px 10px 0px #d4d4d4;
+  border-color: var(--dl-color-gray-black);
+  border-width: 1px;
+  border-radius: var(--dl-radius-radius-radius4);
+  animation-name: tada;
+  animation-delay: 5s;
+  text-decoration: none;
+  background-color: #fffdfd;
+  animation-duration: 300ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
+.nav12-root-class-name {
+  left: 7px;
+  width: var(--dl-size-size-large);
+  bottom: 10px;
+  height: var(--dl-size-size-small);
+  position: absolute;
+  align-self: flex-start;
+  background-image: linear-gradient(45deg, rgba(227, 235, 240, 0.11) 13.00%,rgb(221, 215, 205) 100.00%);
+}
+
+.main-container {
+  width: 100%;
+  display: flex;
+  overflow: auto;
+  min-height: 100vh;
+  transition: 0.3s;
+  align-items: center;
+  flex-direction: column;
+  background-size: cover;
+  justify-content: center;
+  background-image: url("public/1620px-euro_coins_and_banknotes_(cropped)1.jpg");
+}
+
+.main-text {
+  top: 215px;
+  left: 0px;
+  right: 0px;
+  width: auto;
+  height: auto;
+  margin: auto;
+  position: absolute;
+  align-self: flex-start;
+  text-align: left;
+  font-weight: 700;
+  animation-name: fadeIn;
+  animation-delay: 0s;
+  background-color: rgba(255, 255, 255, 0.86);
+  animation-duration: 600ms;
+  animation-direction: normal;
+  animation-iteration-count: 1;
+  animation-timing-function: ease;
+}
