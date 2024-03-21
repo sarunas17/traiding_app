@@ -1,10 +1,12 @@
 import requests
+import os
+from dotenv import load_dotenv
 
-url = 'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=IBM&apikey=DHVVHGCAT5GZALII'
-r = requests.get(url)
-data = r.json()
+load_dotenv()
+api_key = os.getenv("API_KEY")
 
-print(data)
-
-# A lightweight alternative to the time series APIs, 
-# this service returns the latest price and volume information for a ticker of your choice.
+def get_stock_price(stock_name: str) -> float:
+    url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_name}&apikey={api_key}'    
+    r = requests.get(url)
+    data = r.json()
+    return data["Global Quote"]['02. open']
