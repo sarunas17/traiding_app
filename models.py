@@ -16,27 +16,28 @@ db = SQLAlchemy(app)
 class User(db.Model, UserMixin):
     __tablename__ = "user"
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column("Name", db.String(20), unique=True, nullable=False)
-    email = db.Column("Email", db.String(120), unique=True, nullable=False)
-    password = db.Column("Password", db.String(60), nullable=False)
-    createdAt = db.Column("CreatedAt", db.DateTime, default=datetime.now)
-    updatedAt = db.Column("UpdatedAt", db.DateTime, default=datetime.now, onupdate=datetime.now)
+    name = db.Column(db.String(20), nullable=False)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password = db.Column(db.String(60), nullable=False)
+    createdAt = db.Column(db.DateTime, default=datetime.now)
+    updatedAt = db.Column(db.DateTime, default=datetime.now, onupdate=datetime.now)
 
 class StockTrades(db.Model):
     __tablename__ = "stock_trades"
     id = db.Column(db.Integer, primary_key=True)
-    stock_name = db.Column("Stock_name", db.String(20), unique=True, nullable=False)
-    price = db.Column("Price", db.Float)
-    amount = db.Column("Amount", db.Integer)
-    createdAt = db.Column("CreatedAt", db.DateTime, default=datetime.now)
-    user_id = db.Column("User_id", db.Integer, db.ForeignKey("user.id"))
+    stock_name = db.Column(db.String(20), nullable=False)
+    price = db.Column(db.Float)
+    amount = db.Column(db.Integer)
+    createdAt = db.Column(db.DateTime, default=datetime.now)
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
     user = db.relationship("User")
 
 class CashTransactions(db.Model):
     __tablename__ = "cash_transactions"
     id = db.Column(db.Integer, primary_key=True)
-    amount = db.Column("Amount", db.Float)
-    stock_trade_id = db.Column("Stock_trade_id", db.Integer, db.ForeignKey("stock_trades.id"))
-    user_id = db.Column("User_id", db.Integer, db.ForeignKey("user.id"))
-    createdAt = db.Column("CreatedAt", db.DateTime, default=datetime.now)
+    amount = db.Column(db.Float)
+    stock_trade_id = db.Column(db.Integer, db.ForeignKey("stock_trades.id"))
+    user_id = db.Column(db.Integer, db.ForeignKey("user.id"))
+    createdAt = db.Column(db.DateTime, default=datetime.now)
     user = db.relationship("User")
+
