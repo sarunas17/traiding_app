@@ -12,16 +12,6 @@ def main():
     return render_template("main.html")
 
 
-@bp.route("/register")
-def register():
-    return render_template("register.html")
-
-
-@bp.route("/userprofile")
-def userprofile():
-    return render_template("userprofile.html")
-
-
 @bp.route("/404")
 def page_not_found():
     return render_template("404.html")
