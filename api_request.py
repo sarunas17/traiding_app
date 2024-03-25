@@ -9,4 +9,9 @@ def get_stock_price(stock_name: str) -> float:
     url = f'https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={stock_name}&apikey={api_key}'    
     r = requests.get(url)
     data = r.json()
-    return data["Global Quote"]['02. open']
+    print(data)    
+    print(data["Global Quote"]['01. symbol'])
+    print(data["Global Quote"]['05. price'])
+    return data["Global Quote"]['05. price']
+
+get_stock_price("IBM")
