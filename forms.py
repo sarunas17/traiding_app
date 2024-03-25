@@ -5,7 +5,7 @@ from flask_wtf.file import FileField, FileAllowed
 from main import User, current_user
 
 
-class RegistracionForm(FlaskForm):
+class RegistrationForm(FlaskForm):
     name = StringField('Name', [DataRequired()])
     email = StringField('Email', [DataRequired()])
     password = PasswordField('Password', [DataRequired()])
