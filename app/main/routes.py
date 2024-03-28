@@ -1,8 +1,8 @@
 from flask import Flask, render_template
+from app.main import bp
 
-app = Flask(__name__, template_folder='templates')
 
-@app.route("/")
+@bp.route("/")
 def index():
     return render_template("index.html")
 
@@ -27,11 +27,12 @@ def login():
 
 
 @app.route("/main")
+@bp.route("/main")
 def main():
     return render_template("main.html")
 
 
-@app.route("/register")
+@bp.route("/register")
 def register():
     db.create_all()
     if current_user.is_authenticated:
@@ -47,15 +48,11 @@ def register():
     return render_template("register.html")
 
 
-@app.route("/userprofile")
+@bp.route("/userprofile")
 def userprofile():
     return render_template("userprofile.html")
 
 
-@app.route("/404")
+@bp.route("/404")
 def page_not_found():
     return render_template("404.html")
-
-
-if __name__ == "__main__":
-    app.run(debug=True, host='127.0.0.1')
